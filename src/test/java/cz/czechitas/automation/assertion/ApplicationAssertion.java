@@ -42,4 +42,9 @@ public final class ApplicationAssertion {
         assertThat(applicationsCountElement.getText()).contains("Zobrazeno " + pocetPrihlasek + " až " + pocetPrihlasek +
                 " záznamů z " + pocetPrihlasek);
     }
+
+    public void overSpravnyodkazNavodyProUcitele(String odkaz){
+        var url = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/ul/li/a");
+        assertThat(url.getAttribute("href")).isEqualTo(odkaz);
+    }
 }

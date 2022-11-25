@@ -57,4 +57,9 @@ public final class ApplicationDetailAssertion {
         var recipientMessageElement = elementFinder.findByXPath("/html/body/div/div/div/div/div/table/tbody/tr[7]/td[2]");
         assertThat(recipientMessageElement.getText()).contains(prijmeniZaka);
     }
+
+    public void overTermin(String zadanTermin) {
+        var kontrolaTerminu = elementFinder.findByXPath("//*[@id=\"DataTables_Table_0\"]/tbody/tr[2]/td[3]");
+        assertThat(kontrolaTerminu.getText()).contains(zadanTermin);
+    }
 }

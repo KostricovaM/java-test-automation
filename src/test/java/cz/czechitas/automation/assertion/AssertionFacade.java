@@ -46,4 +46,17 @@ public final class AssertionFacade {
         var registerButton = elementFinder.findByXPath("/html/body/div/div/div/div/div/div[2]/form/div[4]/div/a");
         assertThat(registerButton.getText()).isEqualTo("Zaregistrujte se");
     }
+
+    public void overTlacitkoDetail() {
+        var tlacitkoDetail = elementFinder.findByXPath("//*[@id=\"DataTables_Table_0\"]/tbody/tr/td[5]/div/a[1]");
+        assertThat(tlacitkoDetail.getText()).isEqualTo("Detail");
+    }
+    public void overJmenoPrihlaseneho() {
+        var JmenoAPrijmeni = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[2]/div/a/strong");
+        assertThat(JmenoAPrijmeni.getText()).isEqualTo("Jan Novotný");
+    }
+    public void overAdresuKontaktu() {
+        var adresaUlice = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/div/div[1]/p[1]");
+        assertThat(adresaUlice.getText()).contains("Horní Dolní");
+    }
 }

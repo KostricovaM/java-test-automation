@@ -67,4 +67,9 @@ final class PublicMenuAction {
         var forParentMenuItem = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[1]/div[1]/a");
         forParentMenuItem.click();
     }
+
+    void jdiDoSekceKontaktOprava() {
+        var klikniNaKontakt = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[1]/a[3]");
+        klikniNaKontakt.click();
+    }
 }

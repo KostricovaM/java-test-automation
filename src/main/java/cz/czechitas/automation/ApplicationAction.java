@@ -33,6 +33,11 @@ final class ApplicationAction {
         createApplicationButton.click();
     }
 
+     void klikniNaVytvoritPrihlaskuJavy() {
+        var createApplicationButtonJavy = elementFinder.findByXPath("/html/body/div/div/div/div/div[2]/div[2]/div/div[2]/a");
+        createApplicationButtonJavy.click();
+    }
+
     void otevriDetailPrvniPrihlasky() {
         var openApplicationButton = elementFinder.findByXPath(
                 "/html/body/div/div/div/div/div/div[2]/div[2]/div/table/tbody/tr/td[5]/div/a[1]");
