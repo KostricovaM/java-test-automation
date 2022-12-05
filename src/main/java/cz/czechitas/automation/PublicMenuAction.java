@@ -53,6 +53,11 @@ final class PublicMenuAction {
         homeMenuItem.click();
     }
 
+    void jdiDoSekcePrihlasky() {
+        var applicationsMenuItem = elementFinder.findByXPath("/html/body/div/header/nav/div/div[1]/a[2]");
+        applicationsMenuItem.click();
+    }
+
     private void clickOnForTeacherMenuItem() {
         var forTeacherMenuItem = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[1]/div[2]/a");
         forTeacherMenuItem.click();
@@ -61,5 +66,10 @@ final class PublicMenuAction {
     private void clickOnForParentMenuItem() {
         var forParentMenuItem = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[1]/div[1]/a");
         forParentMenuItem.click();
+    }
+
+    void jdiDoSekceKontaktOprava() {
+        var klikniNaKontakt = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[1]/a[3]");
+        klikniNaKontakt.click();
     }
 }

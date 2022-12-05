@@ -33,8 +33,32 @@ final class ApplicationAction {
         createApplicationButton.click();
     }
 
+     void klikniNaVytvoritPrihlaskuJavy() {
+        var createApplicationButtonJavy = elementFinder.findByXPath("/html/body/div/div/div/div/div[2]/div[2]/div/div[2]/a");
+        createApplicationButtonJavy.click();
+    }
+
     void otevriDetailPrvniPrihlasky() {
-        var openApplicationButton = elementFinder.findByXPath("/html/body/div/div/div/div/div/div[2]/div[2]/div/table/tbody/tr/td[5]/div/a[1]");
+        var openApplicationButton = elementFinder.findByXPath(
+                "/html/body/div/div/div/div/div/div[2]/div[2]/div/table/tbody/tr/td[5]/div/a[1]");
         openApplicationButton.click();
+    }
+
+    void vyhledej(String textKVyhledani) {
+        var searchInput = elementFinder.findByXPath(
+                "/html/body/div/div/div/div/div/div[2]/div[1]/div/div[2]/div/label/input");
+        searchInput.sendKeys(textKVyhledani);
+    }
+
+    void klikniNaUpravitUPrvniPrihlasky() {
+        var firstApplicationEditButton = elementFinder.findByXPath(
+                "/html/body/div/div/div/div/div/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/a[2]");
+        firstApplicationEditButton.click();
+    }
+
+    void klikniNaDetailUPrvniPrihlasky() {
+        var firstApplicationDetailButton = elementFinder.findByXPath(
+                "/html/body/div/div/div/div/div/div[2]/div[2]/div/table/tbody/tr[1]/td[5]/div/a[1]/i");
+        firstApplicationDetailButton.click();
     }
 }

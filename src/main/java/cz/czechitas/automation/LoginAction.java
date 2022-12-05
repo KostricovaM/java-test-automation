@@ -4,17 +4,17 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
 /**
- * User specific selenium actions
+ * Login/logout specific selenium actions
  *
  * @author Jiri Koudelka
  * @since 1.0.0
  */
 @ParametersAreNonnullByDefault
-final class UserAction {
+final class LoginAction {
 
     private final ElementFinder elementFinder;
 
-    UserAction(ElementFinder elementFinder)
+    LoginAction(ElementFinder elementFinder)
     {
         this.elementFinder = Objects.requireNonNull(elementFinder);
     }
@@ -25,11 +25,15 @@ final class UserAction {
     }
 
     void vyplnEmail(String email) {
+        Objects.requireNonNull(email);
+
         var emailInputBox = elementFinder.findByXPath("//*[@id=\"email\"]");
         emailInputBox.sendKeys(email);
     }
 
     void vyplnHeslo(String heslo) {
+        Objects.requireNonNull(heslo);
+
         var passwordInputBox = elementFinder.findByXPath("//*[@id=\"password\"]");
         passwordInputBox.sendKeys(heslo);
     }
@@ -44,5 +48,19 @@ final class UserAction {
         signedInUserElement.click();
         var logoutButton = elementFinder.findByXPath("//*[@id=\"logout-link\"]");
         logoutButton.click();
+    }
+
+     void klikniNaPrihlasit(){
+        var tlacitkoPrihlasit = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/form/div[3]/div/button");
+    tlacitkoPrihlasit.click();
+    }
+void vypHeslo(String heslo){
+        var formularHeslo = elementFinder.findByXPath("//*[@id=\"password\"]");
+formularHeslo.sendKeys(heslo);
+    }
+
+    void vypEmail(String email){
+        var formularEmail = elementFinder.findByXPath("//*[@id=\"email\"]");
+    formularEmail.sendKeys(email);
     }
 }
